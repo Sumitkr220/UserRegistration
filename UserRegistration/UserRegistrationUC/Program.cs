@@ -61,7 +61,7 @@ namespace UserRegistrationUC
         }
         public static void PasswordValidation(string input)
         {
-            string pattern = "[A-Z]{1,}[0-9a-zA-Z]{7,}";
+            string pattern = "(?=.*[0-9])(?=.*[A-Z]).{8,}";
             bool validate = Regex.IsMatch(input, pattern);
             if (validate)
             {
