@@ -81,7 +81,7 @@ namespace UserRegistrationUC
             string firstName = Console.ReadLine();
             Console.WriteLine("Enter the User Last Name");
             string lastName = Console.ReadLine();
-            Console.WriteLine("Enter the User Email");
+            Console.WriteLine("Enter the User Email Id");
             string eMail = Console.ReadLine();
             Console.WriteLine("Enter the User Mobile number");
             string mobileNumber = Console.ReadLine();
