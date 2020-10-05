@@ -46,6 +46,19 @@ namespace UserRegistrationUC
                 Console.WriteLine("User Email not matches with Pattern");
             }
         }
+        public static void MobileValidation(string input)
+        {
+            string pattern = "^[0-9]{2,3}[ ][0-9]{10}";
+            bool validate = Regex.IsMatch(input, pattern);
+            if (validate)
+            {
+                Console.WriteLine("User Mobile number matches with Pattern Successfully");
+            }
+            else
+            {
+                Console.WriteLine("User Mobile number not matches with Pattern");
+            }
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to User Registraton");
@@ -55,9 +68,12 @@ namespace UserRegistrationUC
             string lastName = Console.ReadLine();
             Console.WriteLine("Enter the User Email");
             string eMail = Console.ReadLine();
+            Console.WriteLine("Enter the User Mobile number");
+            string mobileNumber = Console.ReadLine();
             FirstNameValidation(firstName);
             LastNameValidation(lastName);
             EmailValidation(eMail);
+            MobileValidation(mobileNumber);
         }
     }
 }
