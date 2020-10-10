@@ -6,7 +6,6 @@ namespace UserRegistrationMSUnitTest
     public class UnitTest1
     {
         RegexValidation validation = new RegexValidation();
-
         [TestMethod]
         public void GivenFirstName_Validate_ShouldTrue()
         {
