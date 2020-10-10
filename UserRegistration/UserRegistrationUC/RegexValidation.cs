@@ -15,30 +15,99 @@ namespace UserRegistrationUC
         public static string Password_pattern1 = "^(?=.*[0-9A-Za-z])[0-9A-Za-z]*[$&+,:;=?@#|'<>.-^*()%!][0-9A-Za-z]*$";
         public bool FirstNameValidation(string input)
         {
-            return Regex.IsMatch(input, First_Name_pattern);
+            bool valid= Regex.IsMatch(input, First_Name_pattern);
+            try
+            {
+                if(valid)
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new UserRegistrationCustomException(UserRegistrationCustomException.ExceptionType.INVALID_INPUT, "Invalid input");
+                }
+            }
+            catch(NullReferenceException)
+            {
+                throw new UserRegistrationCustomException(UserRegistrationCustomException.ExceptionType.NULL_EXCEPTION, "Null input");
+            }
         }
         public bool LastNameValidation(string input)
         {
-            return Regex.IsMatch(input, Last_name_pattern);
+            bool valid = Regex.IsMatch(input, Last_name_pattern);
+            try
+            {
+                if (valid)
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new UserRegistrationCustomException(UserRegistrationCustomException.ExceptionType.INVALID_INPUT, "Invalid input");
+                }
+            }
+            catch (NullReferenceException)
+            {
+                throw new UserRegistrationCustomException(UserRegistrationCustomException.ExceptionType.NULL_EXCEPTION, "Null input");
+            }
         }
         public bool EmailValidation(string input)
         {
-            return Regex.IsMatch(input, Email_pattern);
+            bool valid = Regex.IsMatch(input, Email_pattern);
+            try
+            {
+                if (valid)
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new UserRegistrationCustomException(UserRegistrationCustomException.ExceptionType.INVALID_INPUT, "Invalid input");
+                }
+            }
+            catch (NullReferenceException)
+            {
+                throw new UserRegistrationCustomException(UserRegistrationCustomException.ExceptionType.NULL_EXCEPTION, "Null input");
+            }
         }
         public bool MobileValidation(string input)
         {
-            return Regex.IsMatch(input, Mobile_pattern);
+            bool valid = Regex.IsMatch(input, Mobile_pattern);
+            try
+            {
+                if (valid)
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new UserRegistrationCustomException(UserRegistrationCustomException.ExceptionType.INVALID_INPUT, "Invalid input");
+                }
+            }
+            catch (NullReferenceException)
+            {
+                throw new UserRegistrationCustomException(UserRegistrationCustomException.ExceptionType.NULL_EXCEPTION, "Null input");
+            }
         }
         public bool PasswordValidation(string input)
         { 
             bool valid = Regex.IsMatch(input, Password_pattern);
             bool validate = Regex.IsMatch(input, Password_pattern1);
-            if (valid && validate)
+            try
             {
-                return true;
+                if (valid && validate)
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new UserRegistrationCustomException(UserRegistrationCustomException.ExceptionType.INVALID_INPUT, "Invalid input");
+                }
             }
-            else
-                return false;
+            catch (NullReferenceException)
+            {
+                throw new UserRegistrationCustomException(UserRegistrationCustomException.ExceptionType.NULL_EXCEPTION, "Null input");
+            }
         }
     }
 }
